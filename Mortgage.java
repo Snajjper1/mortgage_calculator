@@ -3,21 +3,21 @@ package com.perscholas.interest;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
-public class Main {
+public class Mortgage {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);                     //
+        Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter principal: ");                        //principal
+        System.out.print("Enter principal: ");
         int principal = input.nextInt();
 
         System.out.print("Enter Interest Rate: ");
         double interestRate = input.nextFloat();
-        double monthlyInterest = interestRate / 100 / 12;              //percent per month
+        double monthlyInterest = interestRate / 100 / 12;
 
         System.out.print("Enter Period in years: ");
         byte years = input.nextByte();
-        int numberOfPayments = years * 12;                              //Months in 1 year
+        int numberOfPayments = years * 12;
 
         double monthlyPayment = principal * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments)) /
                 (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
